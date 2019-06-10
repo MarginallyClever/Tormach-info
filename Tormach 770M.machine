@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<machine xmlns="http://www.hsmworks.com/xml/2009/machine">
+
+  <vendor>Tormach</vendor>
+
+  <model>770M </model>
+
+  <description>Tormach 770M 3-axis</description>
+
+  <control>Pathpilot</control>
+
+  <machining additive="no" jet="no" milling="yes" turning="no"/>
+
+  <dimensions depth="1232mm" height="2235mm" weight="431kg" width="1422mm"/>
+
+  <capacities depth="191mm" height="337mm" weight="0kg" width="356mm"/>
+
+  <coolant options="MIST AIR"/>
+
+  <multiAxis adjust="yes" angle="10deg" cone="3deg" feedRateType="inverse" linearizationTolerance="0.040000000000000001mm" method="off" reconfigure="yes" tolerance="0.040000000000000001mm"/>
+
+  <tooling maximumToolDiameter="0mm" maximumToolLength="0mm" maximumToolWeight="0kg" numberOfTools="100" toolChanger="yes" toolPreload="yes"/>
+
+  <machiningTime ratio="1" toolChangeTime="15s"/>
+
+  <capabilities maximumBlockProcessingSpeed="0" maximumFeedrate="0mm/min" workOffsets="100"/>
+
+  <simulation retractOnIndexing="yes" shortestAngularRotation="yes" wcs="0mm 0mm 0mm">
+    <machineAssembly></machineAssembly>
+  </simulation>
+
+  <post>
+    <postProcessor>system://tormach.cps</postProcessor>
+    <postProperties>
+      <Parameters>
+        <Parameter expression="false" name="disableCoolant" value="false"/>
+        <Parameter expression="true" name="dwellInSeconds" value="true"/>
+        <Parameter expression="false" name="forceWorkOffset" value="false"/>
+        <Parameter expression="4" name="multiCoolAirBlastSeconds" value="4"/>
+        <Parameter expression="false" name="multiCoolEquipped" value="false"/>
+        <Parameter expression="false" name="optionalStopOperation" value="false"/>
+        <Parameter expression="true" name="optionalStopTool" value="true"/>
+        <Parameter expression="false" name="reversingHead" value="false"/>
+        <Parameter expression="2" hexValue="0x4000000000000000" name="reversingHeadFeed" value="2"/>
+        <Parameter expression="'none'" name="rotaryTableAxis" value="none"/>
+        <Parameter expression="true" name="separateWordsWithSpace" value="true"/>
+        <Parameter expression="10" name="sequenceNumberIncrement" value="10"/>
+        <Parameter expression="true" name="sequenceNumberOperation" value="true"/>
+        <Parameter expression="10" name="sequenceNumberStart" value="10"/>
+        <Parameter expression="false" name="showSequenceNumbers" value="false"/>
+        <Parameter expression="false" name="smartCoolEquipped" value="false"/>
+        <Parameter expression="100" name="smartCoolToolSweepPercentage" value="100"/>
+        <Parameter expression="false" name="useG28" value="false"/>
+        <Parameter expression="true" name="useG30" value="true"/>
+        <Parameter expression="true" name="useM6" value="true"/>
+        <Parameter expression="false" name="useRadius" value="false"/>
+        <Parameter expression="true" name="writeMachine" value="true"/>
+        <Parameter expression="true" name="writeTools" value="true"/>
+        <Parameter expression="false" name="writeVersion" value="false"/>
+      </Parameters>
+    </postProperties>
+    <setupSheet></setupSheet>
+    <setupSheetProperties>
+      <Parameters/>
+    </setupSheetProperties>
+  </post>
+
+  <axis actuator="linear" coordinate="X" homePosition="0mm" id="X" link="table" maximumFeed="0mm/min" name="" offset="0mm 0mm 0mm" range="0mm 0mm" rapidFeed="0mm/min" resolution="0mm"/>
+
+  <axis actuator="linear" coordinate="Y" homePosition="0mm" id="Y" link="table" maximumFeed="0mm/min" name="" offset="0mm 0mm 0mm" range="0mm 0mm" rapidFeed="0mm/min" resolution="0mm"/>
+
+  <axis actuator="linear" coordinate="Z" homePosition="0mm" id="Z" link="table" maximumFeed="0mm/min" name="" offset="0mm 0mm 0mm" range="0mm 0mm" rapidFeed="0mm/min" resolution="0mm"/>
+
+  <spindle axis="0 0 1" maximumSpeed="10000rpm" minimumSpeed="535rpm">
+    <description></description>
+  </spindle>
+
+</machine>
